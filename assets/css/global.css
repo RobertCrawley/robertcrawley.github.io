@@ -54,6 +54,7 @@ p {
 /*Images */
 img {
     margin-bottom: 42px;
+    margin-top: 30px;
     /* Drop shadow effect at right and bottom of image */
     box-shadow: 8px 10px 8px #888;
     border-radius: 15px ;
