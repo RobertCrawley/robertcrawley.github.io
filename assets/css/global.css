@@ -5,7 +5,7 @@ html { height: 100%; font-size: 100%; font: inherit; vertical-align: baseline;
 scroll-behavior: smooth; scroll-padding-top: 20px }
 body { max-width: 1600px; line-height: 1.5; margin-left: auto; margin-right: auto; 
 min-height: 100vh; text-rendering: optimizeSpeed }  
-img { width: 100%; height: auto; display: block }
+img { width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto }
 h1, h2, h3, h4 { width: 100% }
 input, button, textarea, select { font: inherit }
 
@@ -13,6 +13,7 @@ input, button, textarea, select { font: inherit }
 
 body { 
     text-align: center;
+    image-orientation: center;
     font-family: sans-serif;
 }
 
@@ -41,6 +42,19 @@ h3 {
 
 p {
     font-size: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 35px;
 }
 
+/*Images */
+img {
+    margin-bottom: 42px;
+    /* Drop shadow effect at right and bottom of image */
+    box-shadow: 8px 10px 8px #888;
+}
+
+center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
