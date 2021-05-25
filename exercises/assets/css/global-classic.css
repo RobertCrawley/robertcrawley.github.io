@@ -1,0 +1,69 @@
+/*  ============= WEB BROWSER RESETS ============ */
+* { margin: 0; padding: 0; border: none }
+*, *::before, *::after { box-sizing: border-box }
+html { height: 100%; font-size: 100%; font: inherit; vertical-align: baseline;
+scroll-behavior: smooth; scroll-padding-top: 20px }
+body { max-width: 1600px; line-height: 1.5; margin-left: auto; margin-right: auto; 
+min-height: 100vh; text-rendering: optimizeSpeed }  
+img { width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto }
+h1, h2, h3, h4 { width: 100% }
+input, button, textarea, select { font: inherit }
+
+/* ================= ENDS ================ */
+
+/* Desktops */
+@media (min-width: 768px) { body { padding: 4% 20% } }
+	
+/* Mobiles */
+@media (max-width: 767px) { body { padding: 12% 8% } }
+
+body { 
+    text-align: center;
+    image-orientation: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: calc(32px + (90 - 32) * ((100vw - 320px) / (1600 - 320)));
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: calc(28px + (42 - 28) * ((100vw - 320px) / (1600 - 320)));
+    letter-spacing: 6px;
+    margin-bottom: 48px;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1600 - 320)));
+    margin-top: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+p {
+    
+    font-size: calc(16px + (36 - 16) * ((100vw - 320px) / (1600 - 320)));
+    margin-bottom: 35px;
+}
+
+/*Images */
+img {
+    margin-bottom: 42px;
+    margin-top: 30px;
+    /* Drop shadow effect at right and bottom of image */
+    box-shadow: 8px 10px 8px #888;
+    border-radius: 15px ;
+}
+
+center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }

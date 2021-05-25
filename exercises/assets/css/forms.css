@@ -248,7 +248,7 @@ section p {
     
 @media (min-width: 767px) {
     .container-form input { margin-right: 32px; min-width: 320px }  
-   .container-form { justify-content: space-around } 
+    .container-form { justify-content: space-around } 
 }
     
 @media (max-width: 767px) {
