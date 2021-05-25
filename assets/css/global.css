@@ -57,11 +57,11 @@ p, li { color: #403d50 }
  }
  
 /* Height of desktop menu and mobile menu bar */
-.container-menu-desktop, .container-menu-bar-mobile { height:72px }
+.container-menu-desktop, .container-menu-bar-mobile { height:60px }
 
 /* website logo fixed size in desktop menu and mobile menu bar  */
 .container-menu-desktop    a:first-child img,
-.container-menu-bar-mobile a:first-child img { width: 200px; height: 40px }
+.container-menu-bar-mobile a:first-child img { width: 200px; height: 60px }
 
 /* website logo vertically centered in desktop menu and mobile menu bar  */
 .container-menu-desktop    a:first-child,
@@ -100,8 +100,8 @@ p, li { color: #403d50 }
 /* ======= Resize images  ======= */
 
 .pic1 {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
 }
 
 .pic2 {
@@ -694,7 +694,7 @@ img.image-circle {
 @media all and (min-width: 1024px) {
 	#contact-form .flex-row { flex-direction: row; text-align: left; margin-bottom: 6% }
 	#contact-form .flex-row .item-name,
-	#contact-form .flex-row .item-email { width: 47% }
+	#contact-form .flex-row .item-email  { width: 48% }
 	#contact-form .flex-row .item-textarea { width: 64% }
 	#contact-form .flex-row .item-btn { width: 30%; align-self: flex-end }
 }
