@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
 	<!-- Styles for Cookie Consent Popup Message -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+	<link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" rel="stylesheet">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122243940-1"></script>
@@ -33,26 +33,27 @@
 
 <body>
 
-    <!-- Begin desktop menu  -->
+    <!-- Begin desktop menu -->
     <div class="container-menu-desktop menu-light menu-sticky">
         <!-- first child item -->
-       <!-- <a href="index.html"><img src="assets/img/website-logo.png" alt="website logo"></a> -->
-           
+        <a href="index.html"><img src="assets/img/website-logo.png" alt="website logo"></a>
+        <!-- <a href="index-1.html"><img src="assets/img/Rob_logo3.jpg" alt="website logo"></a> -->
         <!-- second child item -->
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio/index.html">Portfolio</a></li>
+            <!-- <li><a href="contact/index-1.html" class="btn-cta">Contact &nbsp;<i class="fas fa-arrow-right"></i></a></li> -->
             <li><a href="contact/index.html" >Contact &nbsp;<i class="fas fa-arrow-right"></i></a></li>
-            
         </ul>
     </div>
     <!-- End desktop menu -->
 
 
     <!-- Begin mobile menu bar -->
-    <div class="container-menu-desktop menu-light menu-sticky">
-            <!-- first child item -->
-       <!-- <a href="index.html"><img src="assets/img/website-logo.png" alt="website logo"></a> -->
+    <div class="container-menu-bar-mobile menu-light menu-sticky">
+            <!-- first child -->
+            <a href="index.html"><img src="assets/img/8166.png" alt="website logo"></a>
+           <!--  <a href="index-1.html"><img src="assets/img/Rob_logo3.jpg" alt="website logo"></a> -->
             <!-- second child -->
             <div class="item-icon">
                 <div class="bar1"></div>
@@ -60,29 +61,29 @@
                 <div class="bar3"></div>
             </div>
         </div>
-    <!-- End mobile menu bar -->  
+    <!-- End mobile menu bar -->
 
     <!-- Begin mobile menu slide-out options -->
     <div class="flyout-menu flyout-menu-is-closed menu-light">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio/index.html">Portfolio</a></li>
-            <li><a href="contact/index.html" >Contact &nbsp;<i class="fas fa-arrow-right"></i></a></li>
+            <li><a href="contact/index.html" class="btn-cta">Contact &nbsp;<i class="fas fa-arrow-right"></i></a></li>
         </ul>
 
         <hr>
         <h4>About Me</h4>
         <div class="fly-out-profile-box">
             <img src="assets/img/profile-pic.jpg" alt="Robert Crawley, web designer, Dublin">
-            <p>Hi, I'm Robert Crawley, a web and digital designer based in Dublin, Ireland.</p>
+            <p>Hi, I'm <b>Robert Crawley</b>, a web and digital designer based in Dublin, Ireland.</p>
         </div>
    
         <h4>Contact</h4>
         <p>Have a project you'd like to discuss? Let's make something great together!</p>
 
-        <!-- <h5><a href="tel:0881234567">088 123 4567</a></h5> -->
+        <h5><a href="tel:0881234567">088 123 4567</a></h5>
 
-        <h5><a href="mailto:ibat.training@gmail.com" target="_blank">Rob42.Crawley@gmail.com</a></h5>
+        <h5><a href="mailto:ibat.training@gmail.com" target="_blank">marysmith@myemail.com</a></h5>
 
         <h4>Social Links</h4>
         <div class="fly-out-social-icons">
@@ -99,7 +100,7 @@
     <!-- End mobile menu slide-out options -->
 
      <!-- Begin hero block -->
-    <div class="container-flexbox container-hero-block-two-columns unhide-content-under-sticky-menu">
+     <div class="container-flexbox container-hero-block-two-columns unhide-content-under-sticky-menu">
         <div class="item-2 slide-in-left">
             <h1>Begin</h1>
             <h2> I create digital experiences to promote product, services & events 
@@ -107,10 +108,10 @@
                 </h2>
             <a href="contact/index.html" class="button button-solid">Want to collaborate ? &nbsp;<i class="fas fa-arrow-right"></i></a>
         </div>
+        <div class="item-2">     
+            <img src="assets/img/index1st-Rob2.jpg" alt="index pic 1">
+         <!--   <img src="assets/img/hero-undraw-home.png" alt="hero image"> -->
 
-        <div class="item-2 pic1">  
-           <!--  <img src="assets/img/hero-undraw-home.png" alt="hero image"> -->
-            <img src="assets/img/pexels-anna-shvets-5830631.jpg"  width="50" height="50" alt="hero image"> 
         </div>
     </div>
     <!-- End hero block -->
@@ -122,8 +123,6 @@
 		<div class="item-1">
 			<h2>Portfolio</h2>
             <p>Below you can see some examples of my recent work. Check out my complete <a href="portfolio/index.html" class="fancy-link">portfolio</a>.</p>
-            
-          <!--  <p>Have a project you'd like to discuss? <a href="contact/index.html" class="fancy-link">Let's make something great together!</a></p> -->
 		</div>
     </div><!-- End parent flexbox container -->
     
@@ -135,21 +134,21 @@
 			<a href="portfolio/smoothies/index.html"><img src="assets/img/project-smoothie.jpg" class="image-shadow" alt="Project: Smooth Smoothies"></a>
 			<h3><a href="portfolio/smoothies/index.html" class="fancy-link">Smooth Smoothies</a></h3>
             <p>Offering tasty alternatives to sugary and unhealthy snacks for busy, on-the-go, on-trend professionals.</p>
-         <!--   <a href="portfolio/smoothies/index.html" class="button button-solid">View Project &nbsp;<i class="fas fa-arrow-right"></i></a>  -->           
+         <!--   <a href="portfolio/smoothies/index.html" class="button button-solid">View Project &nbsp;<i class="fas fa-arrow-right"></i></a> -->            
 		</div>
 
         <div class="item-3">
 			<a href="portfolio/software/index.html"><img src="assets/img/project-software.png" class="image-shadow" alt="Project: Software Analytics"></a>
 			<h3><a href="portfolio/software/index.html" class="fancy-link">Software Analytics</a></h3>
             <p>Everything you need to know about your website traffic, without spying on visitors' personal information.</p>
-          <!--  <a href="portfolio/software/index.html" class="button button-solid">View Project &nbsp;<i class="fas fa-arrow-right"></i></a>   -->        
+           <!-- <a href="portfolio/software/index.html" class="button button-solid">View Project &nbsp;<i class="fas fa-arrow-right"></i></a>    -->        
         </div>
         
 		<div class="item-3">
 			<a href="portfolio/travel/index.html"><img src="assets/img/project-travel.jpg" class="image-shadow" alt="Project: Travel Agency"></a>
 			<h3><a href="portfolio/travel/index.html" class="fancy-link">IBAT Tours</a></h3>
             <p>Need a holiday? IBAT Tours provides happy holiday experiences at affordable prices.</p>
-         <!--   <a href="portfolio/travel/index.html" class="button button-solid">View Project &nbsp;<i class="fas fa-arrow-right"></i></a>  -->             
+         <!--   <a href="portfolio/travel/index.html" class="button button-solid">View Project &nbsp;<i class="fas fa-arrow-right"></i></a>      -->         
 		</div>
 
 	</div><!-- End parent flexbox container -->
@@ -159,7 +158,7 @@
 	<div class="container-footer">
 
         <h4>Robert Crawley</h4>
-        <h5>Collaboration brings digital to life</h5>
+        <h5>Bright ideas brought to life</h5>
 
         <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
@@ -273,31 +272,26 @@
 		}
 
 	</script>
-
 	<!-- End JavaScript code for desktop and mobile menus -->
 
 
     <!-- JavaScript for Cookie Consent Popup Message -->
-<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-<script>
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#000",
-      "text": "#0f0"
-    },
-    "button": {
-      "background": "#0f0"
-    }
-  },
-  "content": {
-    "href": "https://github.com/RobertCrawley/privacy.html"
-  }
-});
-</script>
-
-
-
+	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+	<script>
+	window.cookieconsent.initialise({
+	  	"palette": {
+			"popup": {
+				"background": "#000"
+			},
+			"button": {
+				"background": "#f1d600"
+			}
+		},
+	  	"content": {
+			"href": "https://github.com/RobertCrawley/privacy.html"
+		}
+	});
+    </script>
     
 </body>
 </html>
