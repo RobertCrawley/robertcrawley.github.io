@@ -10,6 +10,7 @@ h1, h2, h3 { color: #222 }
 p, li { color: #403d50 }
 .bg-pastel-green { background-color: rgb(227,250,245) }
 .bg-pastel-grey { background-color: #edf5f1 }
+.bg-pastel-pink { background-color: #fffefc }
 
 
 /* ===================== BEGIN MENU STYLES ========================== */
@@ -646,7 +647,8 @@ img.image-circle {
 /* All screens */
 .container-contact-form { 
 	text-align: center; 
-	background-color: #fff; 
+
+ background-color: #fff; 
 	border: solid 1px gray
 }
 
@@ -694,7 +696,8 @@ img.image-circle {
 @media all and (min-width: 1024px) {
 	#contact-form .flex-row { flex-direction: row; text-align: left; margin-bottom: 6% }
 	#contact-form .flex-row .item-name,
-	#contact-form .flex-row .item-email  { width: 48% }
+	#contact-form .flex-row .item-email  { width: 45% }
+    #contact-form .flex-row .item-phone  { width: 45% }
 	#contact-form .flex-row .item-textarea { width: 64% }
 	#contact-form .flex-row .item-btn { width: 30%; align-self: flex-end }
 }
