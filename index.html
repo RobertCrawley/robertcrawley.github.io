@@ -68,7 +68,7 @@
 <body class="font-sans text-gray-800 bg-stone-50 selection:bg-rosegold-200 selection:text-sage-900">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm py-4">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-white/85 backdrop-blur-md shadow-sm py-4">
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
             <a href="#hero" class="font-cursive text-3xl md:text-4xl text-sage-800 hover:text-sage-600 transition">L &amp; R</a>
             
@@ -77,18 +77,18 @@
                 <a href="#schedule" class="hover:text-sage-700 transition py-1 border-b-2 border-transparent hover:border-sage-500">Schedule</a>
                 <a href="#venue" class="hover:text-sage-700 transition py-1 border-b-2 border-transparent hover:border-sage-500">Venue &amp; Travel</a>
                 <a href="#gallery" class="hover:text-sage-700 transition py-1 border-b-2 border-transparent hover:border-sage-500">Gallery</a>
-				<a href="#registry" class="hover:text-sage-700 transition py-1 border-b-2 border-transparent hover:border-sage-500">Registry</a>
+                <a href="#registry" class="hover:text-sage-700 transition py-1 border-b-2 border-transparent hover:border-sage-500">Registry</a>
                 <a href="#rsvp" class="hover:text-sage-700 transition py-1 border-b-2 border-transparent hover:border-sage-500">RSVP</a>
             </div>
 
             <!-- Mobile menu button -->
-            <button id="menu-btn" class="md:hidden text-stone-700 focus:outline-none" aria-label="Toggle Navigation">
+            <button id="menu-btn" class="md:hidden text-stone-700 focus:outline-none p-2" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars text-2xl"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg px-6 py-6 border-b border-stone-200 space-y-4 text-center text-sm tracking-widest uppercase">
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg px-6 py-6 border-b border-stone-200 space-y-4 text-center text-sm tracking-widest uppercase shadow-lg">
             <a href="#story" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link">Our Story</a>
             <a href="#schedule" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link">Schedule</a>
             <a href="#venue" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link">Venue &amp; Travel</a>
@@ -98,14 +98,14 @@
         </div>
     </nav>
 
-<!-- Hero Section -->
+    <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center text-center px-4 pt-20 pb-12 bg-cover bg-center parallax" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url('pictures/pic14.jpg');">
         <div class="max-w-3xl mx-auto text-white space-y-6 animate-fade-in">
             <p class="text-xs md:text-sm tracking-[0.3em] uppercase font-light text-rosegold-200 drop-shadow">We are getting married!</p>
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal leading-tight tracking-wide drop-shadow-md">
                 Lisa <span class="font-cursive text-rosegold-300 font-light text-6xl md:text-8xl">&amp;</span> Rob
             </h1>
-            <p class="text-gray-600 text-sm max-w-lg mx-auto bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+            <p class="text-gray-700 text-xs md:text-sm max-w-lg mx-auto bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
                 Friday, 9th April, 2027 • <a href="https://www.claytonhotels.com/ballsbridge/?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gmb-hotel-homepage" target="_blank" rel="noopener noreferrer" class="hover:text-sage-700 underline underline-offset-2 transition font-medium">Clayton Hotel, Ballsbridge, Dublin, Ireland</a>
             </p>
 
@@ -137,7 +137,7 @@
         </div>
     </section>
 
-<!-- Our Story Section -->
+    <!-- Our Story Section -->
     <section id="story" class="py-20 md:py-28 px-6 max-w-5xl mx-auto">
         <div class="text-center space-y-3 mb-16">
             <span class="text-xs uppercase tracking-widest text-sage-600 font-semibold">How It All Began</span>
@@ -154,29 +154,29 @@
                     <span class="text-xs font-semibold text-rosegold-500 tracking-wider">July 25th 2008</span>
                     <h3 class="font-serif text-2xl text-stone-800 mt-1">The First Kiss</h3>
                     <p class="text-stone-600 text-sm mt-2 leading-relaxed">
-                        John's going away party from Accenture - with the imortal line "Sure tell them that you have pulled" 
+                        John's going away party from Accenture - with the immortal line "Sure tell them that you have pulled" 
                     </p>
                 </div>
-                <div class="hidden md:block md:w-1/2 md:pl-12">
-                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm">
-                        <img src="pictures/judge_roy.jpg" alt="Gallery Photo 7" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
+                <div class="mt-4 md:mt-0 md:w-1/2 md:pl-12">
+                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm mx-auto md:mx-0" data-src="pictures/judge_roy.jpg">
+                        <img src="pictures/judge_roy.jpg" alt="Gallery Photo 7" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
                     </div>
                 </div>
             </div>
 
             <!-- Transition 1: 18 Hours -->
-            <div class="relative text-center my-6 md:my-8">
+            <div class="relative text-center my-6 md:my-8 pl-8 md:pl-0">
                 <span class="relative z-10 bg-stone-50 px-4 font-cursive text-2xl text-rosegold-500 font-medium">18 Hours</span>
             </div>
 
             <!-- Timeline Item 2 -->
             <div class="relative pl-8 md:pl-0 md:flex md:items-center md:justify-between group">
-                <div class="hidden md:flex md:justify-end md:w-1/2 md:pr-12">
-                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm">
-                        <img src="pictures/first_date.png" alt="First Date" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
+                <div class="md:flex md:justify-end md:w-1/2 md:pr-12 order-2 md:order-1 mt-4 md:mt-0">
+                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm mx-auto md:mx-0 md:ml-auto" data-src="pictures/first_date.png">
+                        <img src="pictures/first_date.png" alt="First Date" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
                     </div>
                 </div>
-                <div class="absolute -left-[9px] top-1 md:static md:w-1/2 md:pl-12">
+                <div class="absolute -left-[9px] top-1 md:static md:w-1/2 md:pl-12 order-1 md:order-2">
                     <div class="md:hidden w-4 h-4 rounded-full bg-sage-500 border-4 border-stone-50"></div>
                     <span class="text-xs font-semibold text-rosegold-500 tracking-wider">July 26th 2008</span>
                     <h3 class="font-serif text-2xl text-stone-800 mt-1">First Date</h3>
@@ -187,7 +187,7 @@
             </div>
 
             <!-- Transition 2: 18 Years -->
-            <div class="relative text-center my-6 md:my-8">
+            <div class="relative text-center my-6 md:my-8 pl-8 md:pl-0">
                 <span class="relative z-10 bg-stone-50 px-4 font-cursive text-2xl text-rosegold-500 font-medium">18 Years</span>
             </div>
 
@@ -198,12 +198,12 @@
                     <span class="text-xs font-semibold text-rosegold-500 tracking-wider">July 25th 2026</span>
                     <h3 class="font-serif text-2xl text-stone-800 mt-1">I asked and She Said Yes!</h3>
                     <p class="text-stone-600 text-sm mt-2 leading-relaxed">
-                        On a quiet morning in our favourite place, Rob got down on one knee (slowly). Through happy tears, Lisa said YES!    18 years later...
+                        On a quiet morning in our favourite place, Rob got down on one knee (slowly). Through happy tears, Lisa said YES! 18 years later...
                     </p>
                 </div>
-                <div class="hidden md:block md:w-1/2 md:pl-12">
-                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm">
-                        <img src="pictures/bench.jpg" alt="The Ask" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
+                <div class="mt-4 md:mt-0 md:w-1/2 md:pl-12">
+                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm mx-auto md:mx-0" data-src="pictures/bench.jpg">
+                        <img src="pictures/bench.jpg" alt="The Ask" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
                     </div>
                 </div>
             </div>
@@ -221,7 +221,6 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                
                 <!-- Card 1 -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-100 text-center hover:shadow-md transition">
                     <div class="w-12 h-12 bg-rosegold-100 text-rosegold-500 rounded-full flex items-center justify-center mx-auto mb-4 text-lg">
@@ -257,7 +256,6 @@
                         Thomas Prior Hall<br>Three-course dinner, toasts, and dancing until late!
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -323,32 +321,30 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-				<!-- Photo 1: pic2ab.jpg with object-contain -->
-				<div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic1.jpg">
-					<img src="pictures/pic1.jpg" alt="Gallery Photo 1" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
-				</div>
-				<!-- Photo 2: pic2ab.jpg with object-contain -->
-				<div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic2ab.jpg">
-					<img src="pictures/pic2ab.jpg" alt="Gallery Photo 2" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
-				</div>
-				<!-- Photo 3: pic2ab.jpg with object-contain -->
-				<div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic11.jpg">
-					<img src="pictures/pic11.jpg" alt="Gallery Photo 3" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
-				</div>
-				<!-- Photo 4: pic2ab.jpg with object-contain -->
-				<div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic12.jpg">
-					<img src="pictures/pic12.jpg" alt="Gallery Photo 4" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
-				</div>
-				<div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/Bella.jpg">
-					<img src="pictures/Bella.jpg" alt="Gallery Photo 5" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
-				</div>
-				<div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic7.jpg">
-					<img src="pictures/pic7.jpg" alt="Gallery Photo 6" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
-				</div>
+                <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic1.jpg">
+                    <img src="pictures/pic1.jpg" alt="Gallery Photo 1" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic2ab.jpg">
+                    <img src="pictures/pic2ab.jpg" alt="Gallery Photo 2" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic11.jpg">
+                    <img src="pictures/pic11.jpg" alt="Gallery Photo 3" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic12.jpg">
+                    <img src="pictures/pic12.jpg" alt="Gallery Photo 4" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/Bella.jpg">
+                    <img src="pictures/Bella.jpg" alt="Gallery Photo 5" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic7.jpg">
+                    <img src="pictures/pic7.jpg" alt="Gallery Photo 6" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                </div>
             </div>
         </div>
-		<!-- Gift Registry Section -->
-		<section id="registry" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    </section>
+
+    <!-- Gift Registry Section -->
+    <section id="registry" class="py-20 px-6 max-w-4xl mx-auto text-center">
         <div class="space-y-3 mb-12">
             <span class="text-xs uppercase tracking-widest text-sage-600 font-semibold">With Thanks</span>
             <h2 class="font-serif text-3xl md:text-5xl text-stone-800">Gift Registry</h2>
@@ -367,10 +363,7 @@
                 <p class="text-xs text-stone-500 mb-6">Help us create lifelong memories.</p>
                 <a href="#" class="inline-block bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-6 py-3 rounded-lg uppercase tracking-wider transition">Contribute Online →</a>
             </div>
-
         </div>
-    </section>	
-
     </section>
 
     <!-- Lightbox Modal -->
@@ -394,7 +387,7 @@
                     <input type="text" name="Guest Name" id="guest-name" required placeholder="e.g. Jane & John Doe" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none">
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs uppercase tracking-wider text-sage-200 mb-2" for="attending">Attendance *</label>
                         <select name="Attendance" id="attending" required class="w-full bg-stone-800 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none">
