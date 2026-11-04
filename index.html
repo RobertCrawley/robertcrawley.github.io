@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lisa & Rob — We're Getting Married!</title>
+
+    <!-- SEO / sharing -->
+    <meta name="description" content="Lisa & Rob are getting married on 9th April 2027 in Dublin.">
+    <meta name="robots" content="noindex">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lisa & Rob — We're Getting Married!">
+    <meta property="og:description" content="Friday 9th April 2027 · Clayton Hotel Ballsbridge, Dublin">
+    <!-- TODO: replace YOUR-DOMAIN with the real address of your site -->
+    <meta property="og:image" content="https://YOUR-DOMAIN/pictures/pic14.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -12,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -21,7 +35,7 @@
                         sage: {
                             50: '#f4f7f4',
                             100: '#e3eae3',
-                            200: '#ca9eca',
+                            200: '#c5d3c5',
                             300: '#a3b7a3',
                             500: '#738e73',
                             600: '#587158',
@@ -49,29 +63,35 @@
     </script>
     <style>
         .parallax {
-            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
-        @supports (-webkit-touch-callout: none) {
-            /* iOS fixed attachment workaround */
-            .parallax {
-                background-attachment: scroll;
-            }
+        /* Fixed backgrounds only on devices with a real hover (desktop); phones scroll normally */
+        @media (hover: hover) and (min-width: 768px) {
+            .parallax { background-attachment: fixed; }
         }
-        .lightbox-open {
-            overflow: hidden;
+        .lightbox-open { overflow: hidden; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 1s ease-out both; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in { animation: none; }
+            html { scroll-behavior: auto !important; }
         }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-stone-50 selection:bg-rosegold-200 selection:text-sage-900">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-white/85 backdrop-blur-md shadow-sm py-4">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm py-4">
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
             <a href="#hero" class="font-cursive text-3xl md:text-4xl text-sage-800 hover:text-sage-600 transition">L &amp; R</a>
-            
+
             <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-medium text-stone-600">
                 <a href="#story" class="hover:text-sage-700 transition py-1 border-b-2 border-transparent hover:border-sage-500">Our Story</a>
                 <a href="#schedule" class="hover:text-sage-700 transition py-1 border-b-2 border-transparent hover:border-sage-500">Schedule</a>
@@ -82,30 +102,30 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button id="menu-btn" class="md:hidden text-stone-700 focus:outline-none p-2" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars text-2xl"></i>
+            <button id="menu-btn" class="md:hidden text-stone-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 rounded p-1" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+                <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg px-6 py-6 border-b border-stone-200 space-y-4 text-center text-sm tracking-widest uppercase shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg px-6 py-6 border-b border-stone-200 space-y-4 text-center text-sm tracking-widest uppercase">
             <a href="#story" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link">Our Story</a>
             <a href="#schedule" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link">Schedule</a>
             <a href="#venue" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link">Venue &amp; Travel</a>
             <a href="#gallery" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link">Gallery</a>
             <a href="#registry" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link">Registry</a>
-            <a href="#rsvp" class="block py-2 text-stone-700 hover:text-sage-700 mobile-link text-sage-800 font-semibold">RSVP</a>
+            <a href="#rsvp" class="block py-2 text-sage-800 hover:text-sage-700 mobile-link font-semibold">RSVP</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center text-center px-4 pt-20 pb-12 bg-cover bg-center parallax" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url('pictures/pic14.jpg');">
+    <section id="hero" class="relative min-h-[100svh] flex items-center justify-center text-center px-4 pt-20 pb-12 bg-cover bg-center parallax" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url('pictures/pic14.jpg');">
         <div class="max-w-3xl mx-auto text-white space-y-6 animate-fade-in">
             <p class="text-xs md:text-sm tracking-[0.3em] uppercase font-light text-rosegold-200 drop-shadow">We are getting married!</p>
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal leading-tight tracking-wide drop-shadow-md">
                 Lisa <span class="font-cursive text-rosegold-300 font-light text-6xl md:text-8xl">&amp;</span> Rob
             </h1>
-            <p class="text-gray-700 text-xs md:text-sm max-w-lg mx-auto bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+            <p class="text-gray-600 text-sm max-w-lg mx-auto bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
                 Friday, 9th April, 2027 • <a href="https://www.claytonhotels.com/ballsbridge/?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gmb-hotel-homepage" target="_blank" rel="noopener noreferrer" class="hover:text-sage-700 underline underline-offset-2 transition font-medium">Clayton Hotel, Ballsbridge, Dublin, Ireland</a>
             </p>
 
@@ -138,72 +158,70 @@
     </section>
 
     <!-- Our Story Section -->
-    <section id="story" class="py-20 md:py-28 px-6 max-w-5xl mx-auto">
+    <section id="story" class="scroll-mt-20 py-20 md:py-28 px-6 max-w-5xl mx-auto">
         <div class="text-center space-y-3 mb-16">
             <span class="text-xs uppercase tracking-widest text-sage-600 font-semibold">How It All Began</span>
             <h2 class="font-serif text-3xl md:text-5xl text-stone-800">Our Love Story</h2>
             <div class="w-12 h-0.5 bg-rosegold-400 mx-auto mt-2"></div>
         </div>
 
-        <div class="relative border-l-2 border-sage-200 md:border-none md:before:absolute md:before:left-1/2 md:before:top-0 md:before:bottom-0 md:before:w-0.5 md:before:bg-sage-200 space-y-12">
-            
-            <!-- Timeline Item 1 -->
-            <div class="relative pl-8 md:pl-0 md:flex md:items-center md:justify-between group">
-                <div class="absolute -left-[9px] top-1 md:static md:w-1/2 md:pr-12 md:text-right">
-                    <div class="md:hidden w-4 h-4 rounded-full bg-sage-500 border-4 border-stone-50"></div>
+        <div class="relative ml-2 pl-0 border-l-2 border-sage-200 md:ml-0 md:border-none md:before:absolute md:before:left-1/2 md:before:top-0 md:before:bottom-0 md:before:w-0.5 md:before:bg-sage-200 space-y-12">
+
+            <!-- Item 1 -->
+            <div class="relative pl-8 md:pl-0 flex flex-col gap-4 md:flex-row md:items-center">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sage-500 border-4 border-stone-50 md:hidden"></div>
+                <div class="md:w-1/2 md:pr-12 md:text-right">
                     <span class="text-xs font-semibold text-rosegold-500 tracking-wider">July 25th 2008</span>
                     <h3 class="font-serif text-2xl text-stone-800 mt-1">The First Kiss</h3>
                     <p class="text-stone-600 text-sm mt-2 leading-relaxed">
-                        John's going away party from Accenture - with the immortal line "Sure tell them that you have pulled" 
+                        John's going away party from Accenture - with the immortal line "Sure tell them that you have pulled"
                     </p>
                 </div>
-                <div class="mt-4 md:mt-0 md:w-1/2 md:pl-12">
-                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm mx-auto md:mx-0" data-src="pictures/judge_roy.jpg">
-                        <img src="pictures/judge_roy.jpg" alt="Gallery Photo 7" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm" data-src="pictures/judge_roy.jpg">
+                        <img src="pictures/judge_roy.jpg" alt="The night of the first kiss" loading="lazy" class="w-full h-56 md:h-64 object-contain transform group-hover:scale-105 transition duration-500">
                     </div>
                 </div>
             </div>
 
-            <!-- Transition 1: 18 Hours -->
-            <div class="relative text-center my-6 md:my-8 pl-8 md:pl-0">
+            <!-- Transition 1 -->
+            <div class="relative text-center my-6 md:my-8">
                 <span class="relative z-10 bg-stone-50 px-4 font-cursive text-2xl text-rosegold-500 font-medium">18 Hours</span>
             </div>
 
-            <!-- Timeline Item 2 -->
-            <div class="relative pl-8 md:pl-0 md:flex md:items-center md:justify-between group">
-                <div class="md:flex md:justify-end md:w-1/2 md:pr-12 order-2 md:order-1 mt-4 md:mt-0">
-                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm mx-auto md:mx-0 md:ml-auto" data-src="pictures/first_date.png">
-                        <img src="pictures/first_date.png" alt="First Date" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-                <div class="absolute -left-[9px] top-1 md:static md:w-1/2 md:pl-12 order-1 md:order-2">
-                    <div class="md:hidden w-4 h-4 rounded-full bg-sage-500 border-4 border-stone-50"></div>
+            <!-- Item 2 -->
+            <div class="relative pl-8 md:pl-0 flex flex-col gap-4 md:flex-row-reverse md:items-center">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sage-500 border-4 border-stone-50 md:hidden"></div>
+                <div class="md:w-1/2 md:pl-12">
                     <span class="text-xs font-semibold text-rosegold-500 tracking-wider">July 26th 2008</span>
                     <h3 class="font-serif text-2xl text-stone-800 mt-1">First Date</h3>
-                    <p class="text-stone-600 text-sm mt-2 leading-relaxed">
-                        We had our first date 18 hours later.
-                    </p>
+                    <p class="text-stone-600 text-sm mt-2 leading-relaxed">We had our first date 18 hours later.</p>
+                </div>
+                <div class="md:w-1/2 md:pr-12 md:flex md:justify-end">
+                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm" data-src="pictures/first_date.png">
+                        <img src="pictures/first_date.png" alt="Lisa and Rob's first date" loading="lazy" class="w-full h-56 md:h-64 object-contain transform group-hover:scale-105 transition duration-500">
+                    </div>
                 </div>
             </div>
 
-            <!-- Transition 2: 18 Years -->
-            <div class="relative text-center my-6 md:my-8 pl-8 md:pl-0">
+            <!-- Transition 2 -->
+            <div class="relative text-center my-6 md:my-8">
                 <span class="relative z-10 bg-stone-50 px-4 font-cursive text-2xl text-rosegold-500 font-medium">18 Years</span>
             </div>
 
-            <!-- Timeline Item 3 -->
-            <div class="relative pl-8 md:pl-0 md:flex md:items-center md:justify-between group">
-                <div class="absolute -left-[9px] top-1 md:static md:w-1/2 md:pr-12 md:text-right">
-                    <div class="md:hidden w-4 h-4 rounded-full bg-sage-500 border-4 border-stone-50"></div>
+            <!-- Item 3 -->
+            <div class="relative pl-8 md:pl-0 flex flex-col gap-4 md:flex-row md:items-center">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sage-500 border-4 border-stone-50 md:hidden"></div>
+                <div class="md:w-1/2 md:pr-12 md:text-right">
                     <span class="text-xs font-semibold text-rosegold-500 tracking-wider">July 25th 2026</span>
-                    <h3 class="font-serif text-2xl text-stone-800 mt-1">I asked and She Said Yes!</h3>
+                    <h3 class="font-serif text-2xl text-stone-800 mt-1">I Asked and She Said Yes!</h3>
                     <p class="text-stone-600 text-sm mt-2 leading-relaxed">
                         On a quiet morning in our favourite place, Rob got down on one knee (slowly). Through happy tears, Lisa said YES! 18 years later...
                     </p>
                 </div>
-                <div class="mt-4 md:mt-0 md:w-1/2 md:pl-12">
-                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm mx-auto md:mx-0" data-src="pictures/bench.jpg">
-                        <img src="pictures/bench.jpg" alt="The Ask" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100 max-w-sm" data-src="pictures/bench.jpg">
+                        <img src="pictures/bench.jpg" alt="The proposal on the bench" loading="lazy" class="w-full h-56 md:h-64 object-contain transform group-hover:scale-105 transition duration-500">
                     </div>
                 </div>
             </div>
@@ -212,7 +230,7 @@
     </section>
 
     <!-- Schedule Section -->
-    <section id="schedule" class="py-20 bg-sage-50/50 border-y border-stone-200/60 px-6">
+    <section id="schedule" class="scroll-mt-20 py-20 bg-sage-50/50 border-y border-stone-200/60 px-6">
         <div class="max-w-4xl mx-auto">
             <div class="text-center space-y-3 mb-16">
                 <span class="text-xs uppercase tracking-widest text-sage-600 font-semibold">The Wedding Day</span>
@@ -221,12 +239,13 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
+
                 <!-- Card 1 -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-100 text-center hover:shadow-md transition">
                     <div class="w-12 h-12 bg-rosegold-100 text-rosegold-500 rounded-full flex items-center justify-center mx-auto mb-4 text-lg">
-                        <i class="fa-solid fa-church"></i>
+                        <i class="fa-solid fa-church" aria-hidden="true"></i>
                     </div>
-                    <span class="text-xs font-semibold text-sage-600 uppercase tracking-wider">14:00 PM</span>
+                    <span class="text-xs font-semibold text-sage-600 uppercase tracking-wider">2:00 PM</span>
                     <h3 class="font-serif text-xl font-semibold text-stone-800 mt-1 mb-2">The Ceremony</h3>
                     <p class="text-stone-600 text-xs leading-relaxed">
                         Thomas Prior Hall<br>Clayton Hotel Ballsbridge<br>Please arrive 20 minutes early.
@@ -236,9 +255,9 @@
                 <!-- Card 2 -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-100 text-center hover:shadow-md transition">
                     <div class="w-12 h-12 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto mb-4 text-lg">
-                        <i class="fa-solid fa-wine-glass"></i>
+                        <i class="fa-solid fa-wine-glass" aria-hidden="true"></i>
                     </div>
-                    <span class="text-xs font-semibold text-sage-600 uppercase tracking-wider">15:00 PM</span>
+                    <span class="text-xs font-semibold text-sage-600 uppercase tracking-wider">3:00 PM</span>
                     <h3 class="font-serif text-xl font-semibold text-stone-800 mt-1 mb-2">Cocktail Hour</h3>
                     <p class="text-stone-600 text-xs leading-relaxed">
                         Hotel Courtyard &amp; Mezzanine<br>Drinks, canapés.
@@ -248,20 +267,29 @@
                 <!-- Card 3 -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-100 text-center hover:shadow-md transition">
                     <div class="w-12 h-12 bg-rosegold-100 text-rosegold-500 rounded-full flex items-center justify-center mx-auto mb-4 text-lg">
-                        <i class="fa-solid fa-music"></i>
+                        <i class="fa-solid fa-music" aria-hidden="true"></i>
                     </div>
-                    <span class="text-xs font-semibold text-sage-600 uppercase tracking-wider">17:00 PM - LATE</span>
+                    <span class="text-xs font-semibold text-sage-600 uppercase tracking-wider">5:00 PM – Late</span>
                     <h3 class="font-serif text-xl font-semibold text-stone-800 mt-1 mb-2">Dinner &amp; Dancing</h3>
                     <p class="text-stone-600 text-xs leading-relaxed">
                         Thomas Prior Hall<br>Three-course dinner, toasts, and dancing until late!
                     </p>
                 </div>
+
+            </div>
+
+            <!-- Add to calendar -->
+            <div class="text-center mt-10">
+                <a href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:-//Lisa%20and%20Rob//Wedding//EN%0D%0ABEGIN:VEVENT%0D%0AUID:lisa-rob-wedding-2027@wedding%0D%0ADTSTAMP:20261104T120000Z%0D%0ADTSTART:20270409T130000Z%0D%0ADTEND:20270409T230000Z%0D%0ASUMMARY:Lisa%20%26%20Rob's%20Wedding%0D%0ALOCATION:Clayton%20Hotel%20Ballsbridge%5C%2C%20Merrion%20Rd%5C%2C%20Dublin%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR" download="lisa-and-rob-wedding.ics" class="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-sage-700 font-semibold hover:text-sage-900 transition">
+                    <i class="fa-regular fa-calendar-plus" aria-hidden="true"></i>
+                    <span>Add to your calendar</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Venue & Travel Section -->
-    <section id="venue" class="py-20 px-6 max-w-6xl mx-auto">
+    <section id="venue" class="scroll-mt-20 py-20 px-6 max-w-6xl mx-auto">
         <div class="text-center space-y-3 mb-16">
             <span class="text-xs uppercase tracking-widest text-sage-600 font-semibold">Location &amp; Stay</span>
             <h2 class="font-serif text-3xl md:text-5xl text-stone-800">Venue &amp; Travel Info</h2>
@@ -280,7 +308,7 @@
 
                 <div class="border-t border-stone-200 pt-6 space-y-4">
                     <div class="flex items-start space-x-3">
-                        <i class="fa-solid fa-location-dot text-sage-600 mt-1"></i>
+                        <i class="fa-solid fa-location-dot text-sage-600 mt-1" aria-hidden="true"></i>
                         <div>
                             <strong class="block text-xs uppercase tracking-wider text-stone-800">Address</strong>
                             <span class="text-stone-600 text-sm">Clayton Hotel, Merrion Rd, Ballsbridge, Dublin, D04 P3C3, Ireland</span>
@@ -288,7 +316,7 @@
                     </div>
 
                     <div class="flex items-start space-x-3">
-                        <i class="fa-solid fa-plane text-sage-600 mt-1"></i>
+                        <i class="fa-solid fa-plane text-sage-600 mt-1" aria-hidden="true"></i>
                         <div>
                             <strong class="block text-xs uppercase tracking-wider text-stone-800">Nearest Airport</strong>
                             <span class="text-stone-600 text-sm">Dublin Airport (DUB) — ~25 min taxi or direct via Aircoach Route 702 to Ballsbridge.</span>
@@ -299,20 +327,20 @@
                 <div class="pt-2">
                     <a href="https://www.google.ie/maps/place/Clayton+Hotel+Ballsbridge/@53.3260026,-6.2279471,17z/data=!4m20!1m10!3m9!1s0x48670ec57aa7b09d:0x7965235d57af13f!2sClayton+Hotel+Ballsbridge!5m2!4m1!1i2!8m2!3d53.3259994!4d-6.2253722!16s%2Fg%2F1tdgp7p8!3m8!1s0x48670ec57aa7b09d:0x7965235d57af13f!5m2!4m1!1i2!8m2!3d53.3259994!4d-6.2253722!16s%2Fg%2F1tdgp7p8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-sage-700 font-semibold hover:text-sage-900 transition">
                         <span>Open in Google Maps</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Map Iframe Embed -->
             <div class="rounded-2xl overflow-hidden shadow-lg border border-stone-200 h-[380px] relative">
-                <iframe class="w-full h-full border-0 filter grayscale opacity-90 hover:grayscale-0 transition-all duration-500" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.493881452187!2d-6.2279471!3d53.3260026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670ec57aa7b09d%3A0x7965235d57af13f!2sClayton%20Hotel%20Ballsbridge!5e0!3m2!1sen!2sie!4v1710000000000!5m2!1sen!2sie" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe title="Map showing Clayton Hotel Ballsbridge" class="w-full h-full border-0 md:grayscale md:opacity-90 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-500" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.493881452187!2d-6.2279471!3d53.3260026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670ec57aa7b09d%3A0x7965235d57af13f!2sClayton%20Hotel%20Ballsbridge!5e0!3m2!1sen!2sie!4v1710000000000!5m2!1sen!2sie" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
     <!-- Photo Gallery -->
-    <section id="gallery" class="py-20 bg-stone-100/70 px-6">
+    <section id="gallery" class="scroll-mt-20 py-20 bg-stone-100/70 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center space-y-3 mb-16">
                 <span class="text-xs uppercase tracking-widest text-sage-600 font-semibold">Memories</span>
@@ -322,29 +350,29 @@
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic1.jpg">
-                    <img src="pictures/pic1.jpg" alt="Gallery Photo 1" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                    <img src="pictures/pic1.jpg" alt="Lisa and Rob, photo 1" loading="lazy" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic2ab.jpg">
-                    <img src="pictures/pic2ab.jpg" alt="Gallery Photo 2" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                    <img src="pictures/pic2ab.jpg" alt="Lisa and Rob, photo 2" loading="lazy" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic11.jpg">
-                    <img src="pictures/pic11.jpg" alt="Gallery Photo 3" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                    <img src="pictures/pic11.jpg" alt="Lisa and Rob, photo 3" loading="lazy" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic12.jpg">
-                    <img src="pictures/pic12.jpg" alt="Gallery Photo 4" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                    <img src="pictures/pic12.jpg" alt="Lisa and Rob, photo 4" loading="lazy" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/Bella.jpg">
-                    <img src="pictures/Bella.jpg" alt="Gallery Photo 5" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                    <img src="pictures/Bella.jpg" alt="Bella" loading="lazy" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md transition group gallery-item bg-stone-100" data-src="pictures/pic7.jpg">
-                    <img src="pictures/pic7.jpg" alt="Gallery Photo 6" class="w-full h-48 md:h-64 object-cover md:object-contain transform group-hover:scale-105 transition duration-500">
+                    <img src="pictures/pic7.jpg" alt="Lisa and Rob, photo 6" loading="lazy" class="w-full h-64 object-contain transform group-hover:scale-105 transition duration-500">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gift Registry Section -->
-    <section id="registry" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <section id="registry" class="scroll-mt-20 py-20 px-6 max-w-4xl mx-auto text-center">
         <div class="space-y-3 mb-12">
             <span class="text-xs uppercase tracking-widest text-sage-600 font-semibold">With Thanks</span>
             <h2 class="font-serif text-3xl md:text-5xl text-stone-800">Gift Registry</h2>
@@ -355,25 +383,36 @@
             Your presence at our wedding is the greatest gift of all. However, should you wish to honor us with a gift, we have set up a honeymoon fund for our trip.
         </p>
 
-        <!-- Centered container -->
         <div class="flex justify-center max-w-md mx-auto">
             <div class="w-full bg-stone-50 border border-stone-200 p-8 rounded-xl hover:shadow-md transition flex flex-col items-center justify-center">
-                <i class="fa-solid fa-plane-departure text-3xl text-sage-700 mb-3"></i>
+                <i class="fa-solid fa-plane-departure text-3xl text-sage-700 mb-3" aria-hidden="true"></i>
                 <h3 class="font-serif text-2xl font-semibold text-stone-800 mb-1">Honeymoon Fund</h3>
                 <p class="text-xs text-stone-500 mb-6">Help us create lifelong memories.</p>
-                <a href="#" class="inline-block bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-6 py-3 rounded-lg uppercase tracking-wider transition">Contribute Online →</a>
+
+                <!-- TODO: replace the placeholder text below with your Revolut link and/or bank details -->
+                <details class="w-full group">
+                    <summary class="list-none cursor-pointer inline-block bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-6 py-3 rounded-lg uppercase tracking-wider transition focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2">
+                        Contribute →
+                    </summary>
+                    <div class="mt-5 text-left text-sm text-stone-600 bg-white border border-stone-200 rounded-lg p-4 space-y-2">
+                        <p><strong class="text-stone-800">Account name:</strong> [Add name here]</p>
+                        <p><strong class="text-stone-800">IBAN:</strong> [Add IBAN here]</p>
+                        <p><strong class="text-stone-800">BIC:</strong> [Add BIC here]</p>
+                        <p><strong class="text-stone-800">Revolut:</strong> <a href="#" class="underline underline-offset-2 hover:text-sage-700">[Add Revolut link here]</a></p>
+                    </div>
+                </details>
             </div>
         </div>
     </section>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-3xl hover:text-rosegold-300 transition" aria-label="Close lightbox">&times;</button>
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-3xl hover:text-rosegold-300 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" aria-label="Close lightbox">&times;</button>
         <img id="lightbox-img" src="" alt="Enlarged photo" class="max-w-full max-h-[85vh] rounded shadow-2xl object-contain">
     </div>
 
     <!-- RSVP Section -->
-    <section id="rsvp" class="py-20 bg-sage-900 text-white px-6">
+    <section id="rsvp" class="scroll-mt-20 py-20 bg-sage-900 text-white px-6">
         <div class="max-w-2xl mx-auto text-center">
             <div class="space-y-3 mb-10">
                 <span class="text-xs uppercase tracking-widest text-rosegold-300 font-semibold">Will You Join Us?</span>
@@ -381,16 +420,21 @@
                 <p class="text-sage-200 text-xs">Please respond by December 14th, 2026</p>
             </div>
 
-            <form action="https://formspree.io/f/mljjnqno" method="POST" class="space-y-6 text-left bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10 shadow-2xl">
+            <form id="rsvp-form" action="https://formspree.io/f/mljjnqno" method="POST" class="space-y-6 text-left bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10 shadow-2xl">
                 <div>
                     <label class="block text-xs uppercase tracking-wider text-sage-200 mb-2" for="guest-name">Full Name(s) *</label>
-                    <input type="text" name="Guest Name" id="guest-name" required placeholder="e.g. Jane & John Doe" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none">
+                    <input type="text" name="Guest Name" id="guest-name" required placeholder="e.g. Jane & John Doe" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-rosegold-300">
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-sage-200 mb-2" for="guest-email">Email *</label>
+                    <input type="email" name="email" id="guest-email" required placeholder="you@example.com" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-rosegold-300">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs uppercase tracking-wider text-sage-200 mb-2" for="attending">Attendance *</label>
-                        <select name="Attendance" id="attending" required class="w-full bg-stone-800 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none">
+                        <select name="Attendance" id="attending" required class="w-full bg-stone-800 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-rosegold-300">
                             <option value="Joyfully Accepts">Joyfully Accepts</option>
                             <option value="Regretfully Declines">Regretfully Declines</option>
                         </select>
@@ -398,7 +442,7 @@
 
                     <div>
                         <label class="block text-xs uppercase tracking-wider text-sage-200 mb-2" for="guests-count">Total Guests</label>
-                        <select name="Total Guests" id="guests-count" class="w-full bg-stone-800 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none">
+                        <select name="Total Guests" id="guests-count" class="w-full bg-stone-800 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-rosegold-300">
                             <option value="1">1 Person</option>
                             <option value="2">2 People</option>
                         </select>
@@ -407,10 +451,13 @@
 
                 <div>
                     <label class="block text-xs uppercase tracking-wider text-sage-200 mb-2" for="dietary">Dietary Requirements</label>
-                    <textarea name="Dietary" id="dietary" rows="3" placeholder="Vegetarian, gluten-free" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none"></textarea>
+                    <textarea name="Dietary" id="dietary" rows="3" placeholder="Vegetarian, gluten-free" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-rosegold-300"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-rosegold-400 hover:bg-rosegold-500 text-stone-900 font-semibold text-xs uppercase tracking-widest py-4 rounded-lg shadow-lg transition">
+                <!-- Honeypot (spam trap): real guests never see or fill this -->
+                <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <button type="submit" class="w-full bg-rosegold-400 hover:bg-rosegold-500 disabled:opacity-60 disabled:cursor-not-allowed text-stone-900 font-semibold text-xs uppercase tracking-widest py-4 rounded-lg shadow-lg transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
                     Send Response
                 </button>
             </form>
@@ -418,16 +465,16 @@
     </section>
 
     <!-- RSVP Confirmation Modal -->
-    <div id="rsvp-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div id="rsvp-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="rsvp-modal-title">
         <div class="bg-white text-stone-800 p-8 rounded-2xl max-w-md w-full text-center space-y-4 shadow-2xl animate-fade-in">
             <div class="w-16 h-16 bg-sage-100 text-sage-700 rounded-full flex items-center justify-center mx-auto text-2xl">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
             </div>
-            <h3 class="font-serif text-3xl font-semibold">Thank You!</h3>
+            <h3 id="rsvp-modal-title" class="font-serif text-3xl font-semibold">Thank You!</h3>
             <p id="modal-message" class="text-stone-600 text-sm leading-relaxed">
                 Your response has been received. We can't wait to celebrate with you!
             </p>
-            <button id="modal-close" class="mt-4 bg-sage-700 hover:bg-sage-800 text-white text-xs uppercase tracking-widest px-6 py-3 rounded-lg transition">
+            <button id="modal-close" class="mt-4 bg-sage-700 hover:bg-sage-800 text-white text-xs uppercase tracking-widest px-6 py-3 rounded-lg transition focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2">
                 Close
             </button>
         </div>
@@ -442,15 +489,15 @@
 
     <!-- JavaScript Logic -->
     <script>
-        // Target wedding date: April 9, 2027
-        const weddingDate = new Date('April 9, 2027 13:30:00').getTime();
+        // Countdown to the ceremony: 2:00 PM Irish time (IST, UTC+1) on 9 April 2027, same for every viewer
+        const weddingDate = new Date('2027-04-09T14:00:00+01:00').getTime();
 
         function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
+            const distance = weddingDate - Date.now();
 
             if (distance < 0) {
                 document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-center font-serif text-2xl text-white'>Today is the day!</div>";
+                clearInterval(countdownTimer);
                 return;
             }
 
@@ -465,25 +512,28 @@
             document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
         }
 
-        setInterval(updateCountdown, 1000);
+        const countdownTimer = setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Mobile Menu Toggle
+        // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
+        const menuIcon = document.getElementById('menu-icon');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
+        function setMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuBtn.setAttribute('aria-expanded', String(open));
+            menuIcon.classList.toggle('fa-bars', !open);
+            menuIcon.classList.toggle('fa-xmark', open);
+        }
+
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            setMenu(mobileMenu.classList.contains('hidden'));
         });
+        mobileLinks.forEach(link => link.addEventListener('click', () => setMenu(false)));
 
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Lightbox functionality
+        // Lightbox
         const galleryItems = document.querySelectorAll('.gallery-item');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -491,22 +541,77 @@
 
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
-                const src = item.getAttribute('data-src');
-                lightboxImg.src = src;
+                const img = item.querySelector('img');
+                lightboxImg.src = item.getAttribute('data-src');
+                lightboxImg.alt = img ? img.alt : 'Enlarged photo';
                 lightbox.classList.remove('hidden');
                 document.body.classList.add('lightbox-open');
+                lightboxClose.focus();
             });
-        });
-
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
         });
 
         function closeLightbox() {
             lightbox.classList.add('hidden');
             document.body.classList.remove('lightbox-open');
         }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // RSVP form: submit in the background and show the thank-you modal
+        const rsvpForm = document.getElementById('rsvp-form');
+        const rsvpModal = document.getElementById('rsvp-modal');
+        const modalMessage = document.getElementById('modal-message');
+
+        function closeRsvpModal() {
+            rsvpModal.classList.add('hidden');
+        }
+
+        rsvpForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = rsvpForm.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch(rsvpForm.action, {
+                    method: 'POST',
+                    body: new FormData(rsvpForm),
+                    headers: { Accept: 'application/json' }
+                });
+                if (!res.ok) throw new Error('Request failed');
+
+                const declined = rsvpForm.querySelector('#attending').value === 'Regretfully Declines';
+                modalMessage.textContent = declined
+                    ? "Thank you for letting us know. We'll miss you, but we hope to celebrate with you soon!"
+                    : "Your response has been received. We can't wait to celebrate with you!";
+                rsvpForm.reset();
+                rsvpModal.classList.remove('hidden');
+                document.getElementById('modal-close').focus();
+            } catch (err) {
+                alert('Sorry, something went wrong sending your RSVP. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = originalText;
+            }
+        });
+
+        document.getElementById('modal-close').addEventListener('click', closeRsvpModal);
+        rsvpModal.addEventListener('click', (e) => {
+            if (e.target === rsvpModal) closeRsvpModal();
+        });
+
+        // Escape closes any open overlay
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeRsvpModal();
+                setMenu(false);
+            }
+        });
     </script>
 </body>
 </html>
