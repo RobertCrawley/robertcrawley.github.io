@@ -113,18 +113,22 @@
     </nav>
 
 <!-- Hero Section -->
-<section id="hero" class="relative overflow-hidden min-h-[100svh] flex flex-col items-center justify-start text-center px-4 pt-24 md:pt-28 pb-40">
+<section id="hero" class="relative overflow-hidden flex flex-col items-center text-center px-4 pt-24 pb-10 md:min-h-[100svh] md:justify-start md:pt-28 md:pb-40">
 
     <!-- Hero image (real <img> so it scales reliably on mobile) -->
     <!-- Desktop: photo fills the hero -->
     <img src="pictures/pic14.jpg" alt="" class="hero-img hidden md:block absolute inset-0 w-full h-full object-cover" fetchpriority="high">
-    <!-- Mobile: blurred copy fills the hero, full uncropped photo sits at the bottom -->
+    <!-- Mobile: blurred copy fills the hero background -->
     <img src="pictures/pic14.jpg" alt="" aria-hidden="true" class="md:hidden absolute inset-0 w-full h-full object-cover blur-2xl scale-125">
-    <img src="pictures/pic14.jpg" alt="Lisa and Rob" class="md:hidden absolute inset-0 w-full h-full object-contain object-bottom" fetchpriority="high">
     <div class="absolute inset-0" style="background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45));"></div>
 
+    <!-- Mobile: full uncropped photo sits under the title (countdown + RSVP come after it) -->
+    <div class="md:hidden order-2 relative z-10 w-full max-w-md mt-6">
+        <img src="pictures/pic14.jpg" alt="Lisa and Rob" class="w-full h-auto rounded-lg shadow-2xl" fetchpriority="high">
+    </div>
+
 <!-- Countdown (vertical, left side) -->
-<div class="relative order-last mt-8 md:mt-0 md:absolute md:left-8 md:top-1/2 md:-translate-y-1/2 md:order-none flex flex-col gap-2 md:gap-4 text-stone-900 z-10">
+<div class="relative order-3 mt-6 md:mt-0 md:absolute md:left-8 md:top-1/2 md:-translate-y-1/2 md:order-none flex flex-col gap-2 md:gap-4 text-stone-900 z-10">
 
     <!-- Countdown Timer -->
     <div id="countdown" class="flex flex-row md:flex-col gap-2 md:gap-4">
@@ -148,7 +152,7 @@
 </div>
 
     <!-- Title content (top of hero) -->
-    <div class="relative z-10 w-full max-w-4xl mx-auto text-white space-y-6 md:space-y-8 animate-fade-in">
+    <div class="relative z-10 order-1 md:order-none w-full max-w-4xl mx-auto text-white space-y-6 md:space-y-8 animate-fade-in">
         <p class="text-xs md:text-3xl lg:text-4xl tracking-[0.2em] uppercase font-semibold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
     We are getting married!
     <span class="block mt-2 text-rosegold-200 font-medium">9th April 2027</span>
@@ -159,7 +163,7 @@
     </div>
 
     <!-- RSVP button (sits below the title) -->
-    <div class="relative z-10 pt-8">
+    <div class="relative z-10 order-4 md:order-none pt-6 md:pt-8">
         <a href="#rsvp" class="inline-block bg-sage-700 hover:bg-sage-600 text-white text-xs uppercase tracking-widest py-3 px-8 rounded-full shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
             RSVP Now
         </a>
